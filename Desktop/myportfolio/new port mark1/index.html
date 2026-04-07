@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="DJ.L |  n8n & AI Automation Expert. Build powerful workflows, AI agents, and internal tools that scale your business.">
+    <meta property="og:title" content="DJ.L | n8n & AI-Agent Automation Expert">
+    <meta property="og:description"
+        content="n8n & AI Automation Expert. Build powerful workflows, AI agents, and internal tools that scale your business.">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>DJ.L | n8n & AI-Agent Automation Expert</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* ===== CASE STUDY STYLES ===== */
+        .case-study-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 48px;
+            margin-top: 48px;
+        }
+        .cs-header { margin-bottom: 40px; }
+        .cs-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,107,53,0.12);
+            border: 1px solid rgba(255,107,53,0.3);
+            color: #ff6b35;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .cs-title {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .cs-subtitle {
+            color: rgba(255,255,255,0.55);
+            font-size: 1rem;
+            max-width: 680px;
+            line-height: 1.7;
+        }
+        .cs-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .cs-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .case-study-card { padding: 24px; }
+        }
+        .cs-metric {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+        }
+        .cs-metric-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ff6b35;
+            margin-bottom: 6px;
+        }
+        .cs-metric-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .cs-metric-sub {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+        }
+        .cs-table-wrapper { margin-bottom: 32px; }
+        .cs-table-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .cs-table {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+        .cs-table-header, .cs-table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+        }
+        .cs-table-header {
+            background: rgba(255,107,53,0.1);
+            padding: 12px 20px;
+        }
+        .cs-table-header span {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .cs-table-row {
+            padding: 14px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .cs-table-row:hover { background: rgba(255,255,255,0.03); }
+        .cs-table-row span { font-size: 0.88rem; color: rgba(255,255,255,0.65); }
+        .cs-table-row .bad { color: #ff4d4d; }
+        .cs-table-row .good { color: #4dff91; font-weight: 600; }
+        .cs-table-row .highlight-cell { color: #ff6b35; font-weight: 700; }
+        .cs-highlight-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(255,107,53,0.03));
+            border: 1px solid rgba(255,107,53,0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 28px;
+        }
+        .cs-highlight-icon {
+            background: rgba(255,107,53,0.15);
+            border-radius: 12px;
+            padding: 14px;
+            color: #ff6b35;
+            flex-shrink: 0;
+        }
+        .cs-highlight-content h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .cs-highlight-content p { color: rgba(255,255,255,0.6); font-size: 0.92rem; line-height: 1.7; }
+        .cs-highlight-content strong { color: #fff; }
+        .cs-scale-block { display: flex; flex-direction: column; gap: 16px; }
+        .cs-scale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .cs-scale-item svg { color: #ff6b35; flex-shrink: 0; margin-top: 2px; }
+        .cs-scale-item div { display: flex; flex-direction: column; gap: 4px; }
+        .cs-scale-item strong { color: #fff; font-size: 0.92rem; }
+        .cs-scale-item span { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.6; }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="network-animation">
+                <div class="central-node">
+                    <i data-lucide="brain-circuit"></i>
+                    <div class="pulse-ring"></div>
+                </div>
+                <div class="satellite-nodes">
+                    <div class="node sat-1"><i data-lucide="workflow"></i></div>
+                    <div class="node sat-2"><i data-lucide="database"></i></div>
+                    <div class="node sat-3"><i data-lucide="zap"></i></div>
+                    <div class="node sat-4"><i data-lucide="code"></i></div>
+                </div>
+            </div>
+            <div class="loading-status">
+                <span class="status-text">Initializing Neural Network</span>
+                <span class="progress-percentage">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" style="opacity: 0;">
+        <nav id="top-nav">
+            <div class="nav-logo"><span>DJ.L</span></div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Case Study</a>
+                <a href="#services">Services</a>
+                <a href="#who-i-serve">Industries</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" class="btn-cta">Hire Me</a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-bg-container">
+                <img src="assets/A_smooth_cinematic_202602101828_k8f8h-ezgif.com-video-to-webp-converter.webp"
+                    alt="Cinematic Background" class="parallax-bg">
+                <div class="overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <div class="intro-block">
+                    <p class="intro-tag"><span class="greeting">Hey there, I'm</span></p>
+                    <h1 class="hero-name">
+                        <span id="typewriter-text">DJ</span><span class="cursor">|</span>
+                    </h1>
+                    <p class="hero-tagline">AI Agent & Automation Expert</p>
+                    <p class="hero-subtitle">From MVPs to production systems</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Case Study</a>
+                        <a href="https://cal.com/dhananjay-lakkawar" class="btn btn-secondary" target="_blank" rel="noopener">Book a Free Call</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                <a href="#" aria-label="Youtube"><i data-lucide="youtube"></i></a>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- Case Study Section (Now #2) -->
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="tag">Real Results</span>
+                    <h2>Case Study: Financial Document AI</h2>
+                    <p class="how-description">Not a demo. Not a prototype. A live system processing real financial documents for a real client with numbers to prove it.</p>
+                </div>
+
+                <!-- Case Study Card -->
+                <div class="case-study-card">
+                    <div class="cs-header">
+                        <div class="cs-badge"><i data-lucide="file-text"></i> Live Client Project</div>
+                        <h3 class="cs-title">AI-Powered Credit Card Document Processing System</h3>
+                        <p class="cs-subtitle">Multi-agent pipeline that ingests financial PDFs, extracts 25 structured data fields per document, and delivers audit-ready output — automatically.</p>
+                    </div>
+
+                    <!-- Impact Metrics -->
+                    <div class="cs-metrics-grid">
+                        <div class="cs-metric">
+                            <div class="cs-metric-number accent-text">85%</div>
+                            <div class="cs-metric-label">Faster Processing</div>
+                            <div class="cs-metric-sub">~5 min vs 35 min per document</div>
+                        </div>
+                        <div class="cs-metric">
+                            <div class="cs-metric-number accent-text">~4 hrs</div>
+                            <div class="cs-metric-label">Time Saved</div>
+                            <div class="cs-metric-sub">Per 9-document batch</div>
+                        </div>
+                        <div class="cs-metric">
+                            <div class="cs-metric-number accent-text">95%+</div>
+                            <div class="cs-metric-label">Accuracy Rate</div>
+                            <div class="cs-metric-sub">On structured data extraction</div>
+                        </div>
+                        <div class="cs-metric">
+                            <div class="cs-metric-number accent-text">$120+</div>
+                            <div class="cs-metric-label">Saved Per Batch</div>
+                            <div class="cs-metric-sub">vs manual processing costs</div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Table -->
+                    <div class="cs-table-wrapper">
+                        <h4 class="cs-table-title">Human vs AI: Head-to-Head</h4>
+                        <div class="cs-table">
+                            <div class="cs-table-header">
+                                <span>Metric</span>
+                                <span>Human Analyst</span>
+                                <span>AI System</span>
+                                <span>Improvement</span>
+                            </div>
+                            <div class="cs-table-row">
+                                <span>Avg. processing time per doc</span>
+                                <span class="bad">35 min</span>
+                                <span class="good">5 min</span>
+                                <span class="highlight-cell">~85% faster</span>
+                            </div>
+                            <div class="cs-table-row">
+                                <span>Accuracy (structured extraction)</span>
+                                <span class="bad">92%</span>
+                                <span class="good">95%</span>
+                                <span class="highlight-cell">+3% accuracy</span>
+                            </div>
+                            <div class="cs-table-row">
+                                <span>Volume per run</span>
+                                <span class="bad">8–10 docs/day</span>
+                                <span class="good">50+ docs in one run</span>
+                                <span class="highlight-cell">5× volume</span>
+                            </div>
+                            <div class="cs-table-row">
+                                <span>Cost per batch (9 docs)</span>
+                                <span class="bad">~$135</span>
+                                <span class="good">~$1.50</span>
+                                <span class="highlight-cell">90× cost savings</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Real Run Highlight -->
+                    <div class="cs-highlight-block">
+                        <div class="cs-highlight-icon"><i data-lucide="zap"></i></div>
+                        <div class="cs-highlight-content">
+                            <h4>Real Run: Client Financial Documents — 9 PDFs</h4>
+                            <p>Extracted all 25 structured data fields across 9 financial documents in <strong>45 minutes total.</strong> The same task would take a human analyst approximately <strong>5 hours</strong> — with higher variance in accuracy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Scale Story -->
+                    <div class="cs-scale-block">
+                        <div class="cs-scale-item">
+                            <i data-lucide="trending-up"></i>
+                            <div>
+                                <strong>At 200 docs/month:</strong>
+                                <span>Human cost exceeds $11,600/year. AI processes the same volume with minimal cost increase.</span>
+                            </div>
+                        </div>
+                        <div class="cs-scale-item">
+                            <i data-lucide="shield-check"></i>
+                            <div>
+                                <strong>Audit-ready output:</strong>
+                                <span>95% accuracy with flagged exceptions. Every extraction is logged and traceable.</span>
+                            </div>
+                        </div>
+                        <div class="cs-scale-item">
+                            <i data-lucide="layers"></i>
+                            <div>
+                                <strong>Built for your document type:</strong>
+                                <span>Same pipeline architecture adapts to invoices, purchase orders, freight bills, and supplier contracts.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study CTA -->
+                    <div class="cs-cta">
+                        <a href="#contact" class="btn btn-primary">Let's Build Something Similar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">About Me</span>
+                    <h2>Automating the Future with AI & n8n</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <!-- Placeholder image or abstract visual -->
+                            <div class="abstract-visual"></div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <p class="bio">
+                            I help businesses thrive in the age of AI. By leveraging n8n's visual workflow capabilities
+                            and cutting-edge LLMs, I build systems that don't just "work"—they innovate.
+                        </p>
+                        <ul class="features-list">
+                            <li><i data-lucide="check-circle" class="accent"></i> Custom n8n workflows</li>
+                            <li><i data-lucide="check-circle" class="accent"></i> AI agent orchestration</li>
+                            <li><i data-lucide="check-circle" class="accent"></i> Internal tools for teams</li>
+                            <li><i data-lucide="check-circle" class="accent"></i> Production-ready automations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="tag">Client Love</span>
+                    <h2>What Clients Say</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"DJ transformed our invoice processing from a 2-day manual task into a 30-minute automated workflow. The ROI was visible within the first month."</div>
+                        <div class="testimonial-result">
+                            <strong>Result:</strong> 85% faster processing, 4+ hours saved daily
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RK</div>
+                            <div class="author-info">
+                                <strong>Rahul K.</strong>
+                                <span>Operations Manager, E-commerce Brand</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"We were skeptical about AI agents, but DJ built us a solution that actually works. Our team can now focus on strategy instead of data entry."</div>
+                        <div class="testimonial-result">
+                            <strong>Result:</strong> 95% accuracy, zero manual errors
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <strong>Sandra M.</strong>
+                                <span>Founder, Logistics Startup</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"Professional, fast, and the support after deployment has been exceptional. DJ is our go-to for any automation needs now."</div>
+                        <div class="testimonial-result">
+                            <strong>Result:</strong> 3x productivity increase
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AP</div>
+                            <div class="author-info">
+                                <strong>Arjun P.</strong>
+                                <span>CTO, Manufacturing Firm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials Section -->
+        <section id="credentials" class="section-padding" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="tag">Credentials</span>
+                    <h2>Recognized by Leading Tech Communities</h2>
+                </div>
+                <div class="credentials-grid">
+                    <div class="credential-card">
+                        <div class="credential-logo"><img src="assets/jagarit-yatra.png" alt="Jagriti Yatra"></div>
+                        <h3>Jagriti Yatra Fellow</h3>
+                        <p>Selected among thousands for entrepreneurial journey across India</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-logo"><img src="assets/aws.png" alt="AWS"></div>
+                        <h3>AWS Community Builder</h3>
+                        <p>Contributing to cloud education and community growth</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-logo"><img src="assets/cncf-logo.png" alt="CNCF"></div>
+                        <h3>CNCF Contributor</h3>
+                        <p>Active contributor to cloud-native and AI projects</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-logo"><img src="assets/gdg.png" alt="GDG"></div>
+                        <h3>GDG Community Lead</h3>
+                        <p>Leading developer communities and organizing tech events</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="tag">Expertise</span>
+                    <h2>Services & Solutions</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon-box"><i data-lucide="workflow"></i></div>
+                        <h3>n8n Workflow Automation</h3>
+                        <p>Complex business logic turned into seamless executable flows.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box"><i data-lucide="bot"></i></div>
+                        <h3>AI Agents (OpenAI, Claude, Gemini)</h3>
+                        <p>Intelligent autonomous agents tailored to your business data.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box"><i data-lucide="shield"></i></div>
+                        <h3>NVIDIA NeMo Claw</h3>
+                        <p>Enterprise-grade governed AI agents with built-in compliance and audit trails.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box"><i data-lucide="layout"></i></div>
+                        <h3>Internal Tools & Dashboards</h3>
+                        <p>Custom panels to monitor and control your automated business.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-box"><i data-lucide="cpu"></i></div>
+                        <h3>SaaS & API Integrations</h3>
+                        <p>Connecting your existing stack into a unified high-speed engine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who I Serve Section -->
+        <section id="who-i-serve" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="tag">Industries I Work With</span>
+                    <h2>Where I Add the Most Value</h2>
+                </div>
+                <p class="serve-intro">
+                    I work with businesses that deal with high volumes of documents and data — where manual processing 
+                    eats up time that could be spent on higher-value work.
+                </p>
+                <p class="serve-sub">
+                    Whether you're processing hundreds of invoices a month or managing complex financial documents, 
+                    I build AI systems that handle the repetitive work so your team can focus on decisions.
+                </p>
+                <div class="serve-grid">
+                    <div class="serve-card">
+                        <div class="serve-icon"><i data-lucide="shopping-cart"></i></div>
+                        <h3>E-commerce &amp; Retail</h3>
+                        <p class="serve-tagline">From scattered data to actionable insights.</p>
+                        <div class="serve-detail">
+                            <p><strong>What I Automate:</strong> Sales data reconciliation across platforms, 
+                                invoice processing, and order-related document extraction.</p>
+                            <p class="serve-result"><i data-lucide="check-circle"></i> <strong>The Benefit:</strong> 
+                                Less time spent on data entry, fewer errors in your records.</p>
+                        </div>
+                    </div>
+                    <div class="serve-card">
+                        <div class="serve-icon"><i data-lucide="truck"></i></div>
+                        <h3>Logistics &amp; Supply Chain</h3>
+                        <p class="serve-tagline">Making sense of complex freight documents.</p>
+                        <div class="serve-detail">
+                            <p><strong>What I Automate:</strong> Freight bill processing, multi-currency tracking, 
+                                and delivery document extraction.</p>
+                            <p class="serve-result"><i data-lucide="check-circle"></i> <strong>The Benefit:</strong> 
+                                Faster processing of shipping documents, clearer cost visibility.</p>
+                        </div>
+                    </div>
+                    <div class="serve-card">
+                        <div class="serve-icon"><i data-lucide="factory"></i></div>
+                        <h3>Manufacturing &amp; Industrial</h3>
+                        <p class="serve-tagline">Connecting your operations to your finances.</p>
+                        <div class="serve-detail">
+                            <p><strong>What I Automate:</strong> Purchase order matching, supplier invoice processing, 
+                                and inventory-related document workflows.</p>
+                            <p class="serve-result"><i data-lucide="check-circle"></i> <strong>The Benefit:</strong> 
+                                Better alignment between what you buy and what you track.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools & Platforms Section -->
+        <section id="tools-platforms" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="tag">Tech Stack</span>
+                    <h2>Tools &amp; Platforms</h2>
+                </div>
+                <div class="tools-intro-block">
+                    <h3 class="tools-subtitle">AI Agent Platforms</h3>
+                    <p class="tools-description">
+                        My AI agent development process combines both platform-based and custom solutions. I leverage
+                        established AI platforms for rapid prototyping and proof-of-concepts, allowing quick validation
+                        of ideas through a low-code approach. Once the concept is proven, I transition to building
+                        sophisticated, custom AI agents using high-code development. This hybrid methodology
+                        significantly accelerates development while ensuring scalability and customization. The
+                        platforms serve as a foundation, upon which I build tailored solutions that precisely match each
+                        client's unique requirements and integrate seamlessly with their existing systems.
+                    </p>
+                </div>
+                <div class="logo-marquee-wrapper">
+                    <div class="logo-track">
+                        <!-- Set 1 -->
+                        <div class="logo-item"><img src="assets/n8n.png" alt="n8n"><span>n8n</span>
+                        </div>
+                        <div class="logo-item"><img src="assets/vapi.png" alt="Vapi"><span>Vapi</span></div>
+                        <div class="logo-item"><img src="assets/zapier.png" alt="Zapier"><span>Zapier</span></div>
+                        <div class="logo-item"><img src="assets/make.png" alt="Make"><span>Make</span></div>
+                        <div class="logo-item"><img src="assets/elevenlabs.png" alt="ElevenLabs"><span>ElevenLabs</span>
+                        </div>
+                        <div class="logo-item"><img src="assets/nemo.png" alt="NeMo Claw"><span>NeMo Claw</span></div>
+                        <div class="logo-item"><img src="assets/agent.png" alt="Agent.ai"><span>Agent.ai</span></div>
+                        <div class="logo-item"><img src="assets/sarvam.png" alt="Sarvam AI"><span>Sarvam AI</span></div>
+                        <!-- Set 2 (duplicate for seamless loop) -->
+                        <div class="logo-item"><img src="assets/n8n.png" alt="n8n"><span>n8n</span>
+                        </div>
+                        <div class="logo-item"><img src="assets/vapi.png" alt="Vapi"><span>Vapi</span></div>
+                        <div class="logo-item"><img src="assets/zapier.png" alt="Zapier"><span>Zapier</span></div>
+                        <div class="logo-item"><img src="assets/make.png" alt="Make"><span>Make</span></div>
+                        <div class="logo-item"><img src="assets/elevenlabs.png" alt="ElevenLabs"><span>ElevenLabs</span>
+                        </div>
+                        <div class="logo-item"><img src="assets/nemo.png" alt="NeMo Claw"><span>NeMo Claw</span></div>
+                        <div class="logo-item"><img src="assets/agent.png" alt="Agent.ai"><span>Agent.ai</span></div>
+                        <div class="logo-item"><img src="assets/sarvam.png" alt="Sarvam AI"><span>Sarvam AI</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- How I Work Section -->
+        <section id="how-i-work" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="tag">Process</span>
+                    <h2>How I Work?</h2>
+                    <p class="how-subtitle">3 Simple Packages</p>
+                    <p class="how-description">I help businesses leverage AI through flexible collaboration. Whether
+                        building AI agents, providing strategic advice, or delivering fixed-price projects.</p>
+                </div>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-icon"><i data-lucide="code-2"></i></div>
+                        <h3>Freelance</h3>
+                        <p>Full-time or part-time engagements to build AI agents.</p>
+                    </div>
+                    <div class="package-card featured">
+                        <div class="package-badge">Most Popular</div>
+                        <div class="package-icon"><i data-lucide="lightbulb"></i></div>
+                        <h3>Consulting</h3>
+                        <p>Expert advice on AI adoption, tailored to your needs.</p>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-icon"><i data-lucide="package"></i></div>
+                        <h3>Projects</h3>
+                        <p>Fixed-price solutions for clear, budget-constrained projects.</p>
+                    </div>
+                </div>
+                <div class="hands-on-block">
+                    <div class="hands-on-content">
+                        <div class="hands-on-badge"><i data-lucide="zap"></i> Hands-On Development</div>
+                        <h3>I offer comprehensive AI agent development services, handling everything from conception to
+                            deployment.</h3>
+                        <p>Working either independently or alongside your team, I commit between <strong>20-40 hours
+                                weekly</strong> to ensure your project's success.</p>
+                    </div>
+                    <div class="hands-on-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">20-40</span>
+                            <span class="stat-label">Hours / Week</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Dedicated Focus</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">End-to-End</span>
+                            <span class="stat-label">Delivery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="tag">Common Queries</span>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <div class="faq-question">What's your pricing model? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">I offer flexible pricing based on project scope. For automation projects, expect starting at $2,000 for MVP builds. I also offer retainer options for ongoing work. Every project is scoped to your specific needs.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How long does a typical project take? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">MVP automation builds typically take 2-4 weeks. More complex AI agent systems can take 4-8 weeks. I'll give you a realistic timeline upfront based on your requirements.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you provide ongoing support? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">Yes! I offer maintenance packages to ensure your automations keep running smoothly. This includes monitoring, bug fixes, and improvements as your business needs evolve.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What's your process from idea to deployment? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">Discovery → Prototype → Build → Test → Deploy → Maintain. I keep you involved at every step and provide regular updates. Most clients see a working prototype within the first week.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can you work with our existing tools? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">Absolutely. I integrate with 200+ platforms including Slack, Notion, Google Workspace, HubSpot, Shopify, and more. If your tool has an API, I can connect it.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you sign NDAs? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">Yes. I understand your business processes and data are sensitive. I'm happy to sign NDAs before any discussions about your specific requirements.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is n8n? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">n8n is a powerful workflow automation tool that allows for complex logic and deep integrations without the limits of other platforms.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is NVIDIA NeMo Claw? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">NVIDIA NeMo Claw is an enterprise-grade AI agent framework that provides governed, auditable, and production-ready AI agent workflows. It's designed for businesses that need compliance, security, and scalability in their AI systems.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can you build custom AI agents? <i data-lucide="chevron-down"></i></div>
+                        <div class="faq-answer">Yes, I specialize in building autonomous agents using OpenAI, Claude, and Gemini, integrated directly into your workflows.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ready to Work Section (New) -->
+        <section id="ready-to-work">
+            <div class="ready-waves"></div>
+            <div class="container">
+                <h2>Let's Work Together</h2>
+                <p class="ready-text">
+                    If you're dealing with repetitive document processing, manual data entry, or want to add AI 
+                    capabilities to your business — let's chat. I can help you figure out if automation is the 
+                    right fit for your situation.
+                </p>
+                <a href="https://wa.me/917410083453" class="btn-whatsapp" target="_blank">Message Me on WhatsApp</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container text-center">
+                <h2 class="cta-headline">Automate Your Business with AI & n8n</h2>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/917410083453" class="btn btn-primary" target="_blank">Hire Me</a>
+                    <a href="#projects" class="btn btn-secondary">View Case Studies</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="section-padding">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-logo">DJL</div>
+                    <div class="footer-links">
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#projects">Projects</a>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="#"><i data-lucide="github"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2026 DJL. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/917410083453" class="sticky-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i data-lucide="message-circle"></i>
+        <span class="whatsapp-tooltip">Let's Chat</span>
+    </a>
+</body>
+
+</html>
